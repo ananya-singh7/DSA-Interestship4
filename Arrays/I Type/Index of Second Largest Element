@@ -1,1 +1,58 @@
+METHOD -1 
+IN DOUBLE TRAVERSAL -
+Time Complexity - O(N)
+Space Complexity - O(1)
+
+
+int print2largest(int arr[], int n) {
+        
+        if(n<2)
+           return -1;
+        int i, max=-1, sec_max=-1;
+        for(i=0; i<n; i++)
+        {
+            if(arr[i]>max)
+               max = arr[i];
+        }
+        for(i=0; i<n; i++)
+        {
+            if(arr[i]>sec_max && arr[i]!=max)
+               sec_max = arr[i];
+        }
+        return sec_max;
+    }
+
+
+
+
+METHOD -2 
+IN SINGLE TRAVERSAL -
+Time Complexity - O(N)
+Space Complexity - O(1)
+
+
+int print2largest(int arr[], int n) {
+
+        if(n < 2)
+        {
+            return -1;
+        }
+        int lar = arr[0];
+        int sec_lar = -1;
+        for(int i = 1; i<n; i++)
+        {
+            if(arr[i] > lar)
+            {
+                sec_lar = lar;
+                lar = arr[i];
+            }
+            else if(arr[i] > sec_lar && arr[i] != lar)
+            {
+                sec_lar = arr[i];
+            }
+        }
+        return sec_lar;
+    }
+
+
 
