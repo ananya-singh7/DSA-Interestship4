@@ -1,1 +1,67 @@
-
+/*
+ * METHOD 1 -
+ * BY CREATING ANOTHER ARRAY AND USING 2 POINTER APPROACH -
+ * We'll traverse the original array and put all the zeroes at the end and all the non-zero elements at the front of the new array
+ * Then we'll paste the values of the new array in the original array
+ * Time Complexity - O(N)
+ * Space Complexity - O(N)
+ */
+ 
+ 
+ public void moveZeroes(int[] nums) {
+        int a[] = new int[nums.length];
+        int j=0, k=nums.length-1;
+        for(int i=0; i<nums.length; i++)
+        {
+            if(nums[i]==0)
+            {
+                a[k]=0;
+                k--;
+            }
+            else
+            {
+                a[j]=nums[i];
+                j++;
+            }
+        }
+        for(j=0; j<nums.length; j++)
+        {
+            nums[j]=a[j];
+        }
+    }
+    
+    
+    
+    
+/*
+ * METHOD - 2
+ * WITHOUT USING EXTRA SPACE WITH 2 POINTER APPROACH
+ * The fast pointer will traverse the array while the slow pointer will keep track of the index of the last encountered zero (0)
+ * This way we'll bring all the unique non-zero elements at the front of the array and also keep track of the number of zeroes encountered
+ * Then we'll run another loop to put all the zeroes at the end of the array
+ * Time Complexity - O(N)
+ * Space Complexity - O(1)
+ */
+ 
+ 
+ public void moveZeroes(int[] nums) {
+        
+        int cur=0, count=0;
+        for(int i=0; i<nums.length; i++)
+        {
+            if(nums[i]!=0)
+            {
+                if(i!=cur)
+                   nums[cur]=nums[i];
+                cur++;
+            }
+            else if(nums[i]==0)
+                count++;
+        }
+        int j=nums.length-1;
+        while(count>0)
+        {
+            nums[j--]=0;
+            count--;
+        }
+    }
