@@ -1,1 +1,17 @@
 
+public int maximumDifference(int[] nums) {
+        int min_num = nums[0], max_diff = -1;
+        for(int i=1; i<nums.length; i++)
+        {
+            if(nums[i]<=min_num)
+            {
+                min_num = nums[i];
+            }
+            else
+            {
+                if(nums[i]-min_num>max_diff)
+                    max_diff = nums[i]-min_num;
+            }
+        }
+        return max_diff;
+    }
