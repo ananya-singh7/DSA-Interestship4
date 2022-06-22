@@ -1,7 +1,9 @@
-METHOD -1 
-IN DOUBLE TRAVERSAL -
-Time Complexity - O(N)
-Space Complexity - O(1)
+/*
+ * METHOD -1 
+ * IN DOUBLE TRAVERSAL -
+ * Time Complexity - O(N)
+ * Space Complexity - O(1)
+ */
 
 
 int print2largest(int arr[], int n) {
@@ -25,10 +27,12 @@ int print2largest(int arr[], int n) {
 
 
 
-METHOD -2 
-IN SINGLE TRAVERSAL -
-Time Complexity - O(N)
-Space Complexity - O(1)
+/*
+ * METHOD -2 
+ * IN SINGLE TRAVERSAL -
+ * Time Complexity - O(N)
+ * Space Complexity - O(1)
+ */
 
 
 int print2largest(int arr[], int n) {
