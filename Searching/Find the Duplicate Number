@@ -1,0 +1,16 @@
+HashSet<Integer> hs = new HashSet<Integer>();
+        int i, n=0;
+        for(i=0; i<nums.length; i++)
+        {
+            if(hs.contains(nums[i]))
+            {
+                n = nums[i];
+                break;
+            }
+            else
+            {
+                hs.add(nums[i]);
+            }    
+        }
+        return n;
+    }
